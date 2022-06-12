@@ -4,3 +4,6 @@
 	ignoreCase = false
 [init]
 	defaultBranch = main
+[alias]
+	st = status
+	dot = "!git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
