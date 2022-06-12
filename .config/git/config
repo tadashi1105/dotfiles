@@ -1,0 +1,6 @@
+[color]
+	ui = auto
+[core]
+	ignoreCase = false
+[init]
+	defaultBranch = main
