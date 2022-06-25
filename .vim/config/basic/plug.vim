@@ -24,9 +24,11 @@ call plug#begin()
 
 " Make sure you use single quotes
 
-if has('nvim')
+if has('nvim') && has('nvim-0.5.0')
   Plug 'windwp/nvim-autopairs'
-else
+endif
+
+if !has('nvim')
   Plug 'LunarWatcher/auto-pairs'
 endif
 
