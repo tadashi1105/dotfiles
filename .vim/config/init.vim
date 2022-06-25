@@ -48,9 +48,9 @@ set cindent
 
 " Use clipboard register
 if has('unnamedplus')
-  set clipboard& clipboard^=unnamedplus
+  set clipboard^=unnamedplus
 else
-  set clipboard& clipboard^=unnamed,autoselect
+  set clipboard^=unnamed
 endif
 
 " Enable backspace delete indent and newline
