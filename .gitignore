@@ -1,1 +1,6 @@
 /.dotfiles/
+
+# Vim
+# Ignore the installed plugins
+.vim/autoload/plug.vim
+.vim/plugged/**
