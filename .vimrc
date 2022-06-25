@@ -20,7 +20,7 @@ if has('nvim') && !has('nvim-0.7.0')
   finish
 endif
 
-if !has('nvim') && v:version <= 801
+if !has('nvim') && v:version < 801
   echo '$MYVIMRC is compatible with version 8.1 or later.'
   finish
 endif
