@@ -15,8 +15,8 @@ scriptencoding utf-8
 " Note: Skip initialization for vim-tiny or vim-small
 if !1 | finish | endif
 
-if has('nvim') && !has('nvim-0.7.0')
-  echo '$MYVIMRC is compatible with version 0.7.0 or later.'
+if has('nvim') && !has('nvim-0.5.0')
+  echo '$MYVIMRC is compatible with version 0.5.0 or later.'
   finish
 endif
 
