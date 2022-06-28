@@ -13,7 +13,7 @@ endif
 " Run PlugInstall if there are missing plugins
 " autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall --sync | source $MYVIMRC | endif
 
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
 "   - Vim (Windows): '~/vimfiles/plugged'
