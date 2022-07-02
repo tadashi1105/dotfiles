@@ -37,3 +37,8 @@ zinit wait lucid light-mode for \
         zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions
+
+# Exa, replacement for ls
+zinit ice wait lucid as"program" from"gh-r" \
+    cp"./completions/exa.zsh -> _exa" pick"bin/exa"
+zinit light ogham/exa
