@@ -1,0 +1,18 @@
+# Starship Prompt
+format = '$all$fill$cmd_duration$time$line_break$character'
+
+[cmd_duration]
+format = '祥[$duration]($style)'
+
+[directory]
+truncation_length = 9
+
+[fill]
+symbol = ' '
+
+[git_branch]
+symbol = ' '
+
+[time]
+format = 'at [$time]($style) '
+disabled = true
