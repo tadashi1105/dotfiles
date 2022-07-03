@@ -27,6 +27,11 @@ call plug#begin('~/.vim/plugged')
 " Colorscheme
 Plug 'arcticicestudio/nord-vim'
 
+" Status line
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+
 " Git
 Plug 'tpope/vim-fugitive'
 
