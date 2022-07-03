@@ -24,6 +24,9 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+" Colorscheme
+Plug 'arcticicestudio/nord-vim'
+
 if has('nvim') && has('nvim-0.5.0')
   Plug 'windwp/nvim-autopairs'
 endif

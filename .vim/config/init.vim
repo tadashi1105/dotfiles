@@ -153,8 +153,4 @@ set number
 " Highlight cursor line
 set cursorline
 
-" Colorscheme
-if has('vim_starting')
-  set background=dark
-  colorscheme murphy
-endif
+set background=dark
