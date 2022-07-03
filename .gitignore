@@ -1,6 +1,17 @@
-/.dotfiles/
+# Ignore all directories and files in the current directory
+/*
 
-# Vim
-# Ignore the installed plugins
-.vim/autoload/plug.vim
-.vim/plugged/**
+# Allow list
+!/.bashrc
+!/.config
+# !/.gitconfig
+!/.gitignore
+!/.hyper.js
+!/.tmux.conf
+!/.vim
+!/.vimrc
+!/.zshrc
+
+# Ignore list
+/.vim/autoload/plug.vim
+/.vim/plugged/
