@@ -27,6 +27,9 @@ call plug#begin('~/.vim/plugged')
 " Colorscheme
 Plug 'arcticicestudio/nord-vim'
 
+" Git
+Plug 'tpope/vim-fugitive'
+
 if has('nvim') && has('nvim-0.5.0')
   Plug 'windwp/nvim-autopairs'
 endif
