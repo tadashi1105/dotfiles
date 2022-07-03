@@ -70,7 +70,7 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 
 if exists('&ambiwidth')
   " Ensure that the cursor position is not displaced by the letters □ and ○
-  set ambiwidth=double
+  "set ambiwidth=double
 endif
 
 " If option "m" is specified, when formatting lines, line breaks are inserted even if they are multibyte characters.
