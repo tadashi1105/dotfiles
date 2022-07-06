@@ -25,24 +25,27 @@ if !has('nvim') && v:version < 801
   finish
 endif
 
+set runtimepath^=~/.config/vim
+
 " Load config files
-runtime config/init.vim
-runtime config/mappings.vim
-runtime config/filetype.vim
+runtime init.vim
+runtime mappings.vim
+runtime filetype.vim
 
 " Load config files before plugin
-runtime! config/before/plugin/*.rc.vim
+runtime! before/plugin/*.rc.vim
 if  has('lua') || has('nvim')
-  runtime! config/before/plugin/*.rc.lua
+  runtime! before/plugin/*.rc.lua
 endif
 
 " Load plugin
-runtime config/plug.vim
+runtime plug.vim
 
 " Load config files after plugin
-runtime! config/after/plugin/*.rc.vim
+runtime! after/plugin/*.rc.vim
 if  has('lua') || has('nvim')
-  runtime! config/after/plugin/*.rc.lua
+  runtime! after/plugin/*.rc.lua
 endif
 
-runtime! config/os/*.vim
+runtime macos.vim
+runtime windows.vim
