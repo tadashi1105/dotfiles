@@ -6,21 +6,17 @@
 " Install vim-plug if not found
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  echo 'Install vim-plug...'
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  let s:install_vim_plug = confirm("vim-plug not installed, install now?", "Yes\nNo", 2)
+  if s:install_vim_plug == 1
+    echo 'Install vim-plug...'
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    echo 'Done!'
+  endif
 endif
 
-" Run PlugInstall if there are missing plugins
-" autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall --sync | source $MYVIMRC | endif
+if empty(glob(data_dir . '/autoload/plug.vim')) | finish | endif
 
 call plug#begin('~/.vim/plugged')
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
 
 " Make sure you use single quotes
 
