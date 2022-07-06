@@ -38,13 +38,5 @@ zinit wait lucid light-mode for \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions
 
-# Starship
-zinit ice as"program" from"gh-r" \
-    atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-    atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
-# Exa, replacement for ls
-zinit ice wait lucid as"program" from"gh-r" \
-    cp"./completions/exa.zsh -> _exa" pick"bin/exa"
-zinit light ogham/exa
+# Use Starship to customize prompt
+eval "$(starship init zsh)"
