@@ -4,7 +4,8 @@
 "=============================================================================
 
 " Install vim-plug if not found
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+let data_dir = '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   let s:install_vim_plug = confirm("vim-plug not installed, install now?", "Yes\nNo", 2)
   if s:install_vim_plug == 1
@@ -15,6 +16,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 if empty(glob(data_dir . '/autoload/plug.vim')) | finish | endif
+if !exists('g:loaded_plug')
+  silent execute 'source' fnameescape(resolve(expand(data_dir . '/autoload/plug.vim'))) 
+endif
 
 call plug#begin('~/.vim/plugged')
 
