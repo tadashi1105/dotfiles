@@ -24,6 +24,8 @@ set fileformats=unix,dos,mac
 " Edit
 "=============================================================================
 
+filetype plugin indent on
+
 " Smart insert tab setting
 set smarttab
 
