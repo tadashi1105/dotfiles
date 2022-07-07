@@ -94,6 +94,12 @@ noremap <Leader>ll :<C-u>call <SID>ToggleInvisibleCharacters()<CR>
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 highlight default link UnicodeSpaces Error
 
+if has('nvim')
+  nnoremap <Leader>ip :PlugInstall --sync <Bar> source $MYVIMRC<CR>
+else
+  nnoremap <Leader>ip :PlugInstall --sync<CR>
+endif
+
 "=============================================================================
 " Function
 "=============================================================================
