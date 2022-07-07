@@ -21,7 +21,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Colorscheme
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'do': ':colorscheme nord' }
 
 " Status line
 Plug 'itchyny/lightline.vim'
