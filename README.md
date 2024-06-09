@@ -13,19 +13,19 @@
 brew install --cask font-monaspace-nerd-font
 ```
 
-### Install dotfiles
-
 ```sh
 brew install neovim
 brew install starship
 brew install tmux
 ```
 
+### Install dotfiles
+
 ```sh
 git clone --bare https://github.com/tadashi1105/dotfiles.git ~/.dotfiles
 git --git-dir=~/.dotfiles/ --work-tree=~ checkout
 ```
 
-## Link
+## Further reading
 
 - [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
