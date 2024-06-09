@@ -1,10 +1,6 @@
 #=============================================================================
 # tadashi1105's .zshrc
 #=============================================================================
-# Author: tadashi1105
-# URL: https://millkeyweb.com
-# Source: https://github.com/tadashi1105/dotfiles
-#=============================================================================
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
