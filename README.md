@@ -26,7 +26,6 @@ brew install --cask font-sauce-code-pro-nerd-font
 ### Install dotfiles
 
 ```sh
-brew install exa
 brew install neovim
 brew install starship
 brew install tmux
