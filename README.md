@@ -1,8 +1,12 @@
 # tadashi1105's dotfiles
-**Warning**: Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+
+> [!WARNING]
+> Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 ## Installation
+
 ### Prerequisites
+
 - A [Nerd Font](https://www.nerdfonts.com/) installed and enabled in your terminal.
 
 ```sh
@@ -34,4 +38,5 @@ git --git-dir=~/.dotfiles/ --work-tree=~ checkout
 ```
 
 ## Link
+
 - [The best way to store your dotfiles: A bare Git repository](https://www.atlassian.com/git/tutorials/dotfiles)
