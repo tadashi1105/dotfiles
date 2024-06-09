@@ -10,17 +10,7 @@
 - A [Nerd Font](https://www.nerdfonts.com/) installed and enabled in your terminal.
 
 ```sh
-wget -P ~ https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip ~/SourceCodePro.zip -d ~/.fonts
-rm ~/SourceCodePro.zip
-fc-cache -fv
-```
-
-Homebrew
-
-```sh
-brew tap homebrew/cask-fonts
-brew install --cask font-sauce-code-pro-nerd-font
+brew install --cask font-monaspace-nerd-font
 ```
 
 ### Install dotfiles
