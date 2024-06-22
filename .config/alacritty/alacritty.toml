@@ -1,0 +1,4 @@
+import = ["/Users/tadashi/.config/alacritty/nord.toml"]
+
+[font.normal]
+family = "MonaspiceNe Nerd Font Mono"
