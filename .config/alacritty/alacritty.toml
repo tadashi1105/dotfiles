@@ -1,4 +1,15 @@
-import = ["/Users/tadashi/.config/alacritty/nord.toml"]
+import = [
+    "~/.config/alacritty/themes/nord.toml"
+]
 
-[font.normal]
-family = "MonaspiceNe Nerd Font Mono"
+[window]
+padding = { x = 16, y = 16 }
+decorations = "Buttonless"
+opacity = 0.8
+blur = true
+
+[font]
+normal = { family = "MonaspiceNe Nerd Font Mono", style = "Regular" }
+size = 14.0
+offset = { x = 0, y = 4 }
+
