@@ -11,6 +11,7 @@
 !/.vim
 !/.vimrc
 !/.zshrc
+!/Brewfile
 
 # Ignore list
 /.vim/autoload/plug.vim
