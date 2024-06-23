@@ -10,10 +10,6 @@
 - A [Nerd Font](https://www.nerdfonts.com/) installed and enabled in your terminal.
 
 ```sh
-brew install --cask font-monaspace-nerd-font
-```
-
-```sh
 brew install neovim
 brew install starship
 brew install tmux
