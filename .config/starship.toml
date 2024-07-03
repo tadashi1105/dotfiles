@@ -1,5 +1,5 @@
 # Starship Prompt
-format = '$all$fill$cmd_duration$time$line_break$character'
+format = '$all$fill$cmd_duration$time${custom.time_mood}$line_break$character'
 
 [cmd_duration]
 format = '祥[$duration]($style)'
@@ -13,3 +13,23 @@ symbol = ' '
 [time]
 format = 'at [$time]($style) '
 disabled = true
+
+[custom.time_mood]
+disabled = false
+command = '''
+TIME=$(date +%H)
+if [[ "$TIME" -le 17 && "$TIME" -ge 8 ]];then
+    time_symbol="󰖙"
+elif [[ "$TIME" -le 21 && "$TIME" -ge 18 ]];then
+    time_symbol="󰖛"
+elif [[ "$TIME" -le 4 || "$TIME" -ge 22 ]];then
+    time_symbol="󰖔"
+else
+    time_symbol="󰖜"
+fi
+echo "$time_symbol"
+'''
+style = 'bold yellow'
+format = '[$output]($style) '
+when = true
+
