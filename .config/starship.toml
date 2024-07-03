@@ -11,8 +11,8 @@ symbol = ' '
 symbol = ' '
 
 [time]
-format = 'at [$time]($style) '
-disabled = true
+disabled = false
+format = '[󱑎 $time]($style) [|](white) '
 
 [custom.time_mood]
 disabled = false
