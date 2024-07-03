@@ -140,7 +140,7 @@ set wildmenu
 set wildmode=list:longest,full
 
 " Increase history amount
-set history=200
+set history=500
 
 " When a line is long, do not omit it in @
 set display=lastline
