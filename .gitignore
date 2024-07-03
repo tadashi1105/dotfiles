@@ -6,6 +6,7 @@
 !/.config
 # !/.gitconfig
 !/.gitignore
+!/.hushlogin
 !/.hyper.js
 !/.tmux.conf
 !/.vim
