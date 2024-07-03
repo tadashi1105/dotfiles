@@ -2,7 +2,7 @@
 format = '$all$fill$cmd_duration$time${custom.time_mood}$line_break$character'
 
 [cmd_duration]
-format = '祥[$duration]($style)'
+format = '[󱦟 $duration]($style) [|](white) '
 
 [fill]
 symbol = ' '
