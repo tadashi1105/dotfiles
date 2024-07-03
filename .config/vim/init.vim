@@ -112,7 +112,7 @@ set hlsearch
 set laststatus=2
 
 " Height of command line
-set cmdheight=2
+set cmdheight=1
 
 " Display the command being entered in the status
 set showcmd
