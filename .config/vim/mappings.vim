@@ -57,7 +57,7 @@ inoremap <expr>,, <SID>IsEndOfLine(',') ? '<C-o>$' : '<C-o>$,'
 nnoremap <expr>,, <SID>IsEndOfLine(',') ? '$' : '$a,<Esc>'
 
 " Add blank line
-nnoremap <silent> <CR> :call append(expand('.'), '')<CR>j
+nnoremap <silent> <CR> :<C-u>call append(expand('.'), '')<CR>j
 
 " Toggle highlight search
 noremap <silent> <Esc><Esc> :<C-u>set hlsearch!<CR>
