@@ -3,9 +3,7 @@
 "=============================================================================
 
 " Enable nocompatible
-if &compatible
-  set nocompatible
-endif
+set nocompatible
 
 "=============================================================================
 " Encoding
@@ -49,11 +47,7 @@ set smartindent
 set cindent
 
 " Use clipboard register
-if has('unnamedplus')
-  set clipboard^=unnamedplus
-else
-  set clipboard^=unnamed
-endif
+set clipboard^=unnamed,unnamedplus
 
 " Enable backspace delete indent and newline
 set backspace=indent,eol,start
@@ -69,11 +63,6 @@ set hidden
 
 " Keymapping timeout
 set timeout timeoutlen=3000 ttimeoutlen=100
-
-if exists('&ambiwidth')
-  " Ensure that the cursor position is not displaced by the letters □ and ○
-  "set ambiwidth=double
-endif
 
 " If option "m" is specified, when formatting lines, line breaks are inserted even if they are multibyte characters.
 " If option "M" is specified, when concatenating lines, do not insert spaces even if they are multibyte characters.
@@ -150,7 +139,6 @@ set ruler
 
 " Show line number
 set number
-" set relativenumber
 
 " Highlight cursor line
 set cursorline
