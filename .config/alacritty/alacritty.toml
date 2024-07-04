@@ -3,6 +3,7 @@ import = [
 ]
 
 [window]
+dimensions = { columns = 104, lines = 31 }
 padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "Buttonless"
