@@ -29,13 +29,11 @@ Plug 'arcticicestudio/nord-vim', { 'do': ':runtime after/plugin/nord-vim.rc.vim'
 
 " Status line
 Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 
 " Git
 Plug 'tpope/vim-fugitive'
 
-if has('nvim') && has('nvim-0.5.0')
+if has('nvim')
   Plug 'windwp/nvim-autopairs'
 endif
 
