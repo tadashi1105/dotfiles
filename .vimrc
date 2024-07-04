@@ -11,16 +11,6 @@ scriptencoding utf-8
 " Note: Skip initialization for vim-tiny or vim-small
 if !1 | finish | endif
 
-if has('nvim') && !has('nvim-0.5.0')
-  echo '$MYVIMRC is compatible with version 0.5.0 or later.'
-  finish
-endif
-
-if !has('nvim') && v:version < 801
-  echo '$MYVIMRC is compatible with version 8.1 or later.'
-  finish
-endif
-
 set runtimepath^=~/.config/vim
 
 " Load config files
