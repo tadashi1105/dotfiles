@@ -9,17 +9,15 @@
 
 - A [Nerd Font](https://www.nerdfonts.com/) installed and enabled in your terminal.
 
-```sh
-brew install neovim
-brew install starship
-brew install tmux
-```
-
 ### Install dotfiles
 
 ```sh
 git clone --bare https://github.com/tadashi1105/dotfiles.git $HOME/.dotfiles
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout
+```
+
+```sh
+brew bundle install
 ```
 
 ## Further reading
