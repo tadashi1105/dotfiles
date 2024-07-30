@@ -4,7 +4,6 @@
 "=============================================================================
 
 " Install vim-plug if not found
-" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 let data_dir = '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   let s:install_vim_plug = confirm("vim-plug not installed, install now?", "Yes\nNo", 2)
@@ -33,13 +32,8 @@ Plug 'itchyny/lightline.vim'
 " Git
 Plug 'tpope/vim-fugitive'
 
-if has('nvim')
-  Plug 'windwp/nvim-autopairs'
-endif
-
-if !has('nvim')
-  Plug 'LunarWatcher/auto-pairs'
-endif
+" Edit
+Plug 'LunarWatcher/auto-pairs'
 
 " Initialize plugin system
 call plug#end()
