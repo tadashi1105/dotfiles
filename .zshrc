@@ -21,3 +21,17 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -l'
+if command -v eza &> /dev/null; then
+  alias ll='eza --long --group --icons'
+fi
+alias g='git'
+# alias vim='nvim'
