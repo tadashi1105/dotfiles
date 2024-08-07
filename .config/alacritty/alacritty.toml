@@ -4,7 +4,7 @@ import = [
 ]
 
 [window]
-dimensions = { columns = 104, lines = 31 }
+dimensions = { columns = 130, lines = 40 }
 padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "Buttonless"
@@ -12,6 +12,22 @@ opacity = 0.8
 blur = true
 
 [font]
-normal = { family = "MonaspiceNe Nerd Font Mono", style = "Regular" }
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+# normal = { family = "Hack Nerd Font Mono", style = "Regular" }
+# normal = { family = "HackGen Console NF", style = "Regular" }
+# normal = { family = "MonaspiceNe Nerd Font Mono", style = "Regular" }
 size = 18.0
 
+[cursor]
+# style = { shape = "Beam", blinking = "On" }
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+  { key = "¥", chars = "\\" },
+  { key = "¥", mods = "Alt", chars = "¥" },
+]
