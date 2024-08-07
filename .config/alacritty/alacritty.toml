@@ -1,5 +1,6 @@
 import = [
-    "~/.config/alacritty/themes/nord.toml"
+  # "~/.config/alacritty/themes/nord.toml",
+  "~/.config/alacritty/themes/tokyonight_moon.toml",
 ]
 
 [window]
