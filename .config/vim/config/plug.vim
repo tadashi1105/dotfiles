@@ -24,7 +24,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Colorscheme
-Plug 'arcticicestudio/nord-vim', { 'do': ':runtime after/plugin/nord-vim.rc.vim' }
+Plug 'nordtheme/vim', { 'as': 'nord.vim' }
+Plug 'folke/tokyonight.nvim', { 'rtp': 'extras/vim' }
 
 " Status line
 Plug 'itchyny/lightline.vim'

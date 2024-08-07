@@ -3,8 +3,6 @@
 " URL: https://github.com/itchyny/lightline.vim
 "=============================================================================
 
-" if !exists('g:loaded_lightline') | finish | endif
-
 let g:lightline = {
       \ 'colorscheme': 'nord',
 			\ 'active': {

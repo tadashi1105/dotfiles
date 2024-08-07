@@ -3,8 +3,6 @@
 " URL: https://github.com/vim-airline/vim-airline
 "=============================================================================
 
-" if !exists('g:loaded_airline') | finish | endif
-
 let g:airline_theme='nord'
 
 " Tab line

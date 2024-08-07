@@ -1,0 +1,17 @@
+"=============================================================================
+" tadashi1105's vimrc
+"=============================================================================
+
+" Note: Skip initialization for vim-tiny or vim-small
+if !1 | finish | endif
+
+set runtimepath^=~/.config/vim
+
+" Load config files
+runtime! config/*.vim
+
+" Load util files
+runtime! util/*.vim
+
+" Load plugin config files
+runtime! plugins/*.vim
