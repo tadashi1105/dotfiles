@@ -4,6 +4,9 @@ local wezterm = require("wezterm")
 -- This will hold the configuration
 local config = wezterm.config_builder()
 
+-- Bell
+config.audible_bell = "Disabled"
+
 -- Window
 config.initial_cols = 130
 config.initial_rows = 40
@@ -13,6 +16,7 @@ config.window_decorations = "RESIZE"
 
 -- Cursor
 config.default_cursor_style = "BlinkingBar"
+config.force_reverse_video_cursor = true
 
 -- Font
 config.font = wezterm.font("FiraCode Nerd Font Mono")
