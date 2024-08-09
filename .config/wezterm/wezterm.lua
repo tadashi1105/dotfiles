@@ -17,6 +17,8 @@ config.window_decorations = "RESIZE"
 -- Cursor
 config.default_cursor_style = "BlinkingBar"
 config.force_reverse_video_cursor = true
+-- How many lines of scrollback you want to retain per tab
+config.scrollback_lines = 10000
 
 -- Font
 config.font = wezterm.font("FiraCode Nerd Font Mono")
