@@ -10,7 +10,7 @@ local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
 -- "" symbol
 local THIN_LEFT_ARROW = wezterm.nerdfonts.pl_right_soft_divider
 
-local EXPAND_ZOOM_ARROW = wezterm.nerdfonts.md_arrow_expand_all
+local EXPAND_ZOOM_ARROW = wezterm.nerdfonts.md_arrow_expand
 
 ---@type { [string]: string }
 local COMMAND_ICONS = {
@@ -68,6 +68,8 @@ local function generate_tab_title(tab, max_width)
 		title = COMMAND_ICONS[process] .. " " .. title
 	end
 
+	title = tab.tab_index .. " " .. THIN_RIGHT_ARROW .. " " .. title
+
 	local is_zoomed = false
 	for _, pane in ipairs(tab.panes) do
 		if pane.is_zoomed then
@@ -80,13 +82,11 @@ local function generate_tab_title(tab, max_width)
 		title = EXPAND_ZOOM_ARROW .. " " .. title
 	end
 
-	local tab_index_string = tostring(tab.tab_index)
-	local tab_index_string_length = #tab_index_string
-	if wezterm.column_width(title) > max_width - (6 + tab_index_string_length) then
-		title = wezterm.truncate_right(title, max_width - (7 + tab_index_string_length)) .. "…"
+	if wezterm.column_width(title) > max_width - 3 then
+		title = wezterm.truncate_right(title, max_width - 5) .. "…"
 	end
 
-	return " " .. tab.tab_index .. " " .. THIN_RIGHT_ARROW .. " " .. title .. " "
+	return " " .. title .. " "
 end
 
 ---@param pane any Pane object
