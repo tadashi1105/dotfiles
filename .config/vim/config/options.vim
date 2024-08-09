@@ -62,5 +62,13 @@ set background=dark
 
 set listchars=space:･,eol:↴,tab:▸-,trail:•,extends:›,precedes:‹,nbsp:⦸
 
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
+
 " Use `<Space>` for `<Leader>`.
 let g:mapleader = "\<Space>"
