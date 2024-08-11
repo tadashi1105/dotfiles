@@ -163,14 +163,11 @@ function M.setup(config)
 		local elements = {}
 		if tab.tab_index == 0 then
 			table.insert(elements, { Foreground = { Color = active_fg } })
-			table.insert(elements, { Background = { Color = arrow_fg } })
 			table.insert(elements, { Text = SOLID_RIGHT_ARROW })
-			if tab.is_active then
-				table.insert(elements, { Foreground = { Color = active_fg } })
-				table.insert(elements, { Background = { Color = active_bg } })
+			if not tab.is_active and hover then
+				table.insert(elements, { Foreground = { Color = active_bg } })
 			else
 				table.insert(elements, { Foreground = { Color = inactive_fg } })
-				table.insert(elements, { Background = { Color = inactive_bg } })
 			end
 		end
 		if tab.is_active then
