@@ -1,17 +1,19 @@
 # Starship Prompt
-format = '$all$fill$cmd_duration$time${custom.time_mood}$line_break$character'
+format = """
+[╭─](blue)$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
+[│ ](blue)$all$line_break\
+[╰─ ](blue)$character"""
 
 [cmd_duration]
-style = 'white'
-format = '[󱦟 $duration]($style) '
+format = ' $duration  '
 
 [fill]
-symbol = ' '
+symbol = '─'
+style = 'blue'
 
 [time]
 disabled = false
-style = 'white'
-format = '[󱑎 $time]($style) '
+format = ' $time  '
 
 [custom.time_mood]
 disabled = false
@@ -28,6 +30,5 @@ else
 fi
 echo "$time_symbol"
 '''
-style = 'white'
-format = '[$output]($style) '
+format = '$output '
 when = true
