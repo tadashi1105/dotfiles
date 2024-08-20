@@ -24,6 +24,9 @@ fi
 # ImageMagick
 export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
+# Set XDG_CONFIG_HOME
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
