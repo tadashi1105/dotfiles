@@ -1,8 +1,36 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # Starship Prompt
+# Framed Classic Style
+# format = """
+# [╭─](blue)$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
+# [│ ](blue)$all$line_break\
+# [╰─](blue)$fill$line_break\
+# $line_break\
+# $character
+# """
+
+# Framed Minimal Style
+# format = """
+# [╭─](blue)$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
+# [│ ](blue)$all$line_break\
+# [╰─ ](blue)$character
+# """
+
+# Streamlined Modern Style
 format = """
-[╭─](blue)$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
-[│ ](blue)$all$line_break\
-[╰─ ](blue)$character"""
+$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
+$all$line_break\
+$line_break\
+$character
+"""
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Allow a timeout (in milliseconds) of up to 1000 for commands executed by the starship
+command_timeout = 1000
 
 [cmd_duration]
 format = ' $duration  '
