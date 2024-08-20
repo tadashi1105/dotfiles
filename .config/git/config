@@ -2,8 +2,11 @@
 	ui = auto
 [core]
 	ignoreCase = false
+	editor = nvim
 [init]
 	defaultBranch = main
 [alias]
 	st = status
 	dot = "!git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+[diff]
+	tool = nvimdiff
