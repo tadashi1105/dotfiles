@@ -21,6 +21,9 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# ImageMagick
+export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
