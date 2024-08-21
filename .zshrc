@@ -37,9 +37,10 @@ eval "$(zoxide init zsh)"
 alias ls='ls --color=auto'
 alias ll='ls -l'
 if command -v eza &> /dev/null; then
-  alias ll='eza --long --group --icons --hyperlink'
-  alias tree='eza --tree --icons --hyperlink'
-  alias treel='ll --tree'
+  alias ll='eza --long --header --group --git --icons --hyperlink'
+  alias llt='ll --tree'
+  alias lt='eza --tree --icons --hyperlink'
+  alias tree='lt'
 fi
 alias lla='ll -a'
 alias g='git'
