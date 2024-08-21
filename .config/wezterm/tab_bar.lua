@@ -124,7 +124,7 @@ local M = {}
 function M.setup(config)
 	config.use_fancy_tab_bar = false
 	config.tab_bar_at_bottom = true
-	-- config.hide_tab_bar_if_only_one_tab = true
+	config.hide_tab_bar_if_only_one_tab = true
 	config.tab_max_width = 32
 	config.unzoom_on_switch_pane = true
 	local colors = config.color_schemes[config.color_scheme]
