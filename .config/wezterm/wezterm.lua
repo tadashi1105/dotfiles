@@ -4,6 +4,30 @@ local wezterm = require("wezterm")
 -- This will hold the configuration
 local config = wezterm.config_builder()
 
+config.default_prog = {
+	"/bin/zsh",
+	"--login",
+	"-c",
+	"if command -v tmux >/dev/null 2>&1; then tmux attach-session || tmux new-session; else zsh; fi",
+}
+
+-- Launch menu
+-- config.launch_menu = {
+-- 	{
+-- 		-- label = '',
+-- 		args = { "zsh", "--login" },
+-- 	},
+-- 	{
+-- 		-- label = '',
+-- 		args = {
+-- 			"zsh",
+-- 			"--login",
+-- 			"-c",
+-- 			"if command -v tmux >/dev/null 2>&1; then tmux attach-session || tmux new-session; else zsh; fi",
+-- 		},
+-- 	},
+-- }
+
 -- Bell
 config.audible_bell = "Disabled"
 

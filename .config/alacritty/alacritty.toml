@@ -3,6 +3,10 @@ import = [
   "~/.config/alacritty/themes/tokyonight_moon.toml",
 ]
 
+[shell]
+program = "/bin/zsh"
+args = ["--login", "-c", "if command -v tmux >/dev/null 2>&1; then tmux attach-session || tmux new-session; else zsh; fi"]
+
 [window]
 dimensions = { columns = 130, lines = 40 }
 padding = { x = 10, y = 10 }
