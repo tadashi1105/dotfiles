@@ -2,6 +2,7 @@
 /*
 
 # Allow list
+!/.bash_profile
 !/.bashrc
 !/.config
 # !/.gitconfig
@@ -9,9 +10,11 @@
 !/.hushlogin
 !/.hyper.js
 !/.tmux.conf
+!/.scripts
 !/.vim
 !/.vimrc
 !/.zshrc
+!/.zlogin
 !/Brewfile
 
 # Ignore list

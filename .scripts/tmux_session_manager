@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# tmux_session_manager: Manage tmux sessions interactively
+#
+# Usage: ./tmux_session_manager
+#
+# This script allows users to create a new tmux session or attach to an existing one.
+# It provides an interactive interface using fzf for session selection.
+
+(
+  # Enable strict mode for better error detection
+  set -euo pipefail
+
+  main() {
+    # Check if already in a tmux session
+    if [ -n "${TMUX:-}" ]; then
+      # echo "Already attached to a tmux session."
+      exit 0
+    fi
+
+    local create_new_session="Create New Session"
+    local cancel="Cancel"
+
+    # Retrieve existing tmux sessions, suppressing errors
+    local tmux_list_sessions
+    tmux_list_sessions=$(tmux list-sessions 2>/dev/null || true)
+
+    # Present session options to user and capture selection
+    local selected_session
+    selected_session=$(
+      {
+        # Display existing sessions if any
+        [ -n "$tmux_list_sessions" ] && printf '%s\n' "$tmux_list_sessions"
+        # Always offer options to create new session or cancel
+        printf '%s\n' "$create_new_session" "$cancel"
+      } | fzf --reverse \
+        --height=40% \
+        --border \
+        --prompt="Select session: " \
+        --header="TMUX SESSIONS" \
+        --header-first
+    )
+
+    # Exit if no selection was made or user chose to cancel
+    [ -z "$selected_session" ] && exit 0
+    [ "$selected_session" = "$cancel" ] && exit 0
+
+    # Process user selection
+    if [ "$selected_session" = "$create_new_session" ]; then
+      tmux new-session
+    else
+      # Extract session name and attach to it
+      local session_name
+      session_name=$(printf '%s' "$selected_session" | cut -d: -f1)
+      tmux attach-session -t "$session_name"
+    fi
+  }
+
+  # Execute main function
+  main
+)
