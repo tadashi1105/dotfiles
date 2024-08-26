@@ -25,7 +25,7 @@ fi
 export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
 # Set XDG_CONFIG_HOME
-export XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -45,5 +45,5 @@ fi
 alias lla='ll -a'
 alias g='git'
 alias lg='lazygit'
-alias lgd='lazygit --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias lgd='lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 # alias vim='nvim'
