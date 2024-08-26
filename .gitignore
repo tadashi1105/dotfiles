@@ -18,5 +18,11 @@
 !/Brewfile
 
 # Ignore list
-/.vim/autoload/plug.vim*
+*.bak
+*.bak/
+*.old
+*.old/
+/.config/raycast/
+/.config/tmux/plugins/
+/.vim/autoload/plug.vim
 /.vim/plugged/
