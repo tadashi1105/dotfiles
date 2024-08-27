@@ -29,6 +29,9 @@ export DYLD_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_LIBRARY_PATH"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+if [ -f "$XDG_CONFIG_HOME/fzf/config.sh" ]; then
+  . "$XDG_CONFIG_HOME/fzf/config.sh"
+fi
 
 # ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"

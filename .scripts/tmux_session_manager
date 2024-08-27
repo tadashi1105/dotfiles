@@ -33,12 +33,14 @@
         [ -n "$tmux_list_sessions" ] && printf '%s\n' "$tmux_list_sessions"
         # Always offer options to create new session or cancel
         printf '%s\n' "$create_new_session" "$cancel"
-      } | fzf --reverse \
-        --height=40% \
+      } | fzf --layout=reverse \
+        --margin=20% \
         --border \
+        --info=inline-right \
         --prompt="Select session: " \
         --header="TMUX SESSIONS" \
-        --header-first
+        --header-first \
+        --highlight-line
     )
 
     # Exit if no selection was made or user chose to cancel
