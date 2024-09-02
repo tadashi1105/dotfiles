@@ -1,0 +1,5 @@
+# Run tmux session manager script.
+# Do not execute at Warp Terminal startup, as keystrokes will be disabled.
+if [ -f "$HOME/.scripts/tmux_session_manager" ] && [ "$TERM_PROGRAM" != "WarpTerminal" ]; then
+  "$HOME/.scripts/tmux_session_manager"
+fi
