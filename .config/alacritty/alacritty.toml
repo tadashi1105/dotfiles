@@ -12,8 +12,8 @@ dimensions = { columns = 130, lines = 40 }
 padding = { x = 10, y = 10 }
 dynamic_padding = true
 decorations = "Buttonless"
-opacity = 0.8
-blur = true
+opacity = 0.96
+# blur = true
 option_as_alt = "OnlyLeft"
 
 [font]

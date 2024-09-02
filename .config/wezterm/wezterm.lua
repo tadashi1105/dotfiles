@@ -34,8 +34,8 @@ config.audible_bell = "Disabled"
 -- Window
 config.initial_cols = 130
 config.initial_rows = 40
-config.window_background_opacity = 0.8
-config.macos_window_background_blur = 30
+config.window_background_opacity = 0.96
+-- config.macos_window_background_blur = 60
 config.window_decorations = "RESIZE"
 
 -- Cursor
