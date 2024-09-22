@@ -1,6 +1,7 @@
 import = [
   # "~/.config/alacritty/themes/nord.toml",
   "~/.config/alacritty/themes/tokyonight_moon.toml",
+  "~/.config/alacritty/keybindings.toml",
 ]
 
 # [shell]
@@ -30,9 +31,3 @@ vi_mode_style = { shape = "Block", blinking = "Off" }
 
 [mouse]
 hide_when_typing = true
-
-[keyboard]
-bindings = [
-  { key = "¥", chars = "\\" },
-  { key = "¥", mods = "Alt", chars = "¥" },
-]

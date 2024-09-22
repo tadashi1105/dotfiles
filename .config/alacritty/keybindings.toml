@@ -1,0 +1,46 @@
+# [All] ¥ -> Output "\"
+[[keyboard.bindings]]
+chars = "\\"
+key = "¥"
+
+# [All] Alt ¥ -> Output "¥"
+[[keyboard.bindings]]
+chars = "¥"
+key = "¥"
+mods = "Alt"
+
+# [All] Shift+Command = -> Increase font size
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "="
+mods = "Shift|Command"
+
+# [All] Shift+Command + -> Increase font size
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "+"
+mods = "Shift|Command"
+
+# [All] Command , -> Open config file in new Alacritty window using Vim
+[[keyboard.bindings]]
+command = { program = "sh", args = ["-c", "open -na alacritty --args -e vim $HOME/.config/alacritty/alacritty.toml"] }
+key = ","
+mods = "Command"
+
+# [All] Command R -> Reset Alacritty configuration to defaults
+[[keyboard.bindings]]
+command = { program = "sh", args = ["-c", "open -na alacritty --args msg config --reset"] }
+key = "R"
+mods = "Command"
+
+# [All] Alt+Command T -> Set window background to 50% transparency
+[[keyboard.bindings]]
+command = { program = "sh", args = ["-c", "open -na alacritty --args msg config window.opacity=0.5"] }
+key = "T"
+mods = "Alt|Command"
+
+# [All] Control+Command F -> Toggle simple fullscreen
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "F"
+mods = "Control|Command"

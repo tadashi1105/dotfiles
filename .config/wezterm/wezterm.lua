@@ -66,13 +66,10 @@ config.command_palette_fg_color = colors.foreground
 config.command_palette_bg_color = colors.tab_bar.active_tab.fg_color
 
 -- Keys
-config.keys = {
-	{
-		key = "¥",
-		mods = "ALT",
-		action = wezterm.action.SendKey({ key = "¥" }),
-	},
-}
+local keybinds = require("keybinds")
+
+config.leader = keybinds.leader
+config.keys = keybinds.keys
 
 require("tab_bar").setup(config)
 
