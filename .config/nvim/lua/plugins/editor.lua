@@ -62,4 +62,32 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = { "3rd/image.nvim" },
   },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      {
+        "<leader>fC",
+        function()
+          require("telescope.builtin").find_files({ cwd = os.getenv("HOME") .. "/.config" })
+        end,
+        desc = "Find Config File (~/.config Dir)",
+      },
+      {
+        "<leader>fB",
+        function()
+          require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
+        end,
+        desc = "Find Files (Current Buffer Dir)",
+      },
+    },
+    opts = function(_, opts)
+      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+        layout_strategy = "horizontal",
+        layout_config = { prompt_position = "top" },
+        sorting_strategy = "ascending",
+        winblend = 0,
+      })
+    end,
+  },
 }
