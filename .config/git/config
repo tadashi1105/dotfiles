@@ -3,6 +3,7 @@
 [core]
 	ignoreCase = false
 	editor = nvim
+	pager = delta
 [init]
 	defaultBranch = main
 [alias]
@@ -11,3 +12,22 @@
 	hist = log --pretty=format:'%C(yellow)%h %C(blue)%ah %C(green)%an  ◯ %C(reset)%s%C(auto)%d %C(reset)' --graph --all
 [diff]
 	tool = nvimdiff
+	colorMoved = default
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[merge]
+	conflictstyle = diff3
+[delta]
+	navigate = true
+	line-numbers = true
+	features = decorations
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-decoration-style = blue ol
+	commit-style = raw
+	file-style = omit
+	hunk-header-decoration-style = blue box
+	hunk-header-file-style = red
+	hunk-header-line-number-style = green
+	hunk-header-style = file line-number syntax
