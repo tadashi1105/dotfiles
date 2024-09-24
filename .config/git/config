@@ -8,6 +8,6 @@
 [alias]
 	st = status
 	dot = "!git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-  hist = log --pretty=format:'%C(yellow)%h %C(blue)%ah %C(green)%an  ◯ %C(reset)%s%C(auto)%d %C(reset)' --graph --all
+	hist = log --pretty=format:'%C(yellow)%h %C(blue)%ah %C(green)%an  ◯ %C(reset)%s%C(auto)%d %C(reset)' --graph --all
 [diff]
 	tool = nvimdiff
