@@ -61,6 +61,16 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = { "3rd/image.nvim" },
+    opts = function(_, opts)
+      opts.filesystem = vim.tbl_deep_extend("force", opts.filesystem or {}, {
+        hijack_netrw_behavior = "disabled",
+      })
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
@@ -76,9 +86,21 @@ return {
       {
         "<leader>fB",
         function()
-          require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
+          local function buffer_dir()
+            return vim.fn.expand("%:p:h")
+          end
+
+          require("telescope").extensions.file_browser.file_browser({
+            path = buffer_dir(),
+            cwd = buffer_dir(),
+            respect_gitignore = false,
+            hidden = true,
+            grouped = true,
+            previewer = true,
+            initial_mode = "normal",
+          })
         end,
-        desc = "Find Files (Current Buffer Dir)",
+        desc = "Find Files with File Browser (Current Buffer Dir)",
       },
     },
     opts = function(_, opts)
@@ -88,6 +110,16 @@ return {
         sorting_strategy = "ascending",
         winblend = 0,
       })
+      opts.extensions = vim.tbl_deep_extend("force", opts.extensions or {}, {
+        file_browser = {
+          hijack_netrw = true,
+          initial_mode = "normal",
+        },
+      })
+    end,
+    config = function(_, opts)
+      require("telescope").setup(opts)
+      require("telescope").load_extension("file_browser")
     end,
   },
 }
