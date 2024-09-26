@@ -47,6 +47,8 @@ set title
 set linebreak
 set breakindent
 set whichwrap+=<,>,[,]
+set modeline
+set modelines=5
 
 set belloff=all
 set history=10000
