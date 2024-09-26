@@ -4,6 +4,10 @@
 
 # Environment Variables
 
+# Set the language
+export LANG=en_US.UTF-8
+# export LANG=ja_JP.UTF-8
+
 # Set the config home directory in compliance with XDG Base Directory Specification
 # Use the existing value if set, otherwise use the default
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
