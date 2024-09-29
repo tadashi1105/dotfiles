@@ -29,6 +29,13 @@ return {
   },
 
   {
+    "rcarriga/nvim-notify",
+    opts = function(_, opts)
+      opts.timeout = 5000
+    end,
+  },
+
+  {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
     opts = {},
