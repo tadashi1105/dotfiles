@@ -9,6 +9,7 @@ opt.fileencoding = "utf-8"
 opt.fileencodings:append({ "euc-jp", "cp932", "iso-2022-jp", "sjis" })
 opt.smarttab = true
 opt.autoindent = true
+opt.smartindent = true
 opt.hidden = true
 opt.formatoptions:append({ m = true, M = true })
 opt.inccommand = "split"
