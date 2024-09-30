@@ -1,6 +1,7 @@
 return {
   {
     "vhyrro/luarocks.nvim",
+    lazy = true,
     -- this plugin needs to run before anything else
     priority = 1001,
     opts = {
@@ -11,6 +12,8 @@ return {
   {
     "3rd/image.nvim",
     dependencies = { "luarocks.nvim" },
+    lazy = true,
+    ft = { "markdown", "vimwiki", "norg" },
     opts = {
       backend = "kitty",
       integrations = {
@@ -62,19 +65,19 @@ return {
     "nvim-neo-tree/neo-tree.nvim",
     dependencies = { "3rd/image.nvim" },
     opts = function(_, opts)
-      opts.filesystem = vim.tbl_deep_extend("force", opts.filesystem or {}, {
-        hijack_netrw_behavior = "disabled",
-      })
+      opts.filesystem.hijack_netrw_behavior = "disabled"
     end,
   },
 
   {
     "nvim-telescope/telescope-file-browser.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   },
 
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-telescope/telescope-file-browser.nvim", "nvim-lua/plenary.nvim" },
     keys = {
       {
         "<leader>fC",

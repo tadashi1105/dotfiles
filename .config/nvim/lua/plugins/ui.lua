@@ -2,7 +2,7 @@ return {
   {
     "b0o/incline.nvim",
     dependencies = { "echasnovski/mini.icons" },
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     opts = {
       window = {
         padding = 1,
