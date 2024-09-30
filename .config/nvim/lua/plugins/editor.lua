@@ -58,7 +58,6 @@ return {
       -- render image files as images when opened
       hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.avif" },
     },
-    -- config = true,
   },
 
   {
