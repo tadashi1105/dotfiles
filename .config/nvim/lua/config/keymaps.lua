@@ -84,12 +84,12 @@ map("n", "<Leader>;ti", function()
     -- Switch to tabs
     vim.bo.expandtab = false
     vim.cmd("retab!")
-    print("Indentation changed to tabs")
+    vim.notify("Indentation changed to tabs", vim.log.levels.INFO)
   else
     -- Switch to spaces
     vim.bo.expandtab = true
     vim.cmd("retab")
-    print("Indentation changed to spaces")
+    vim.notify("Indentation changed to spaces", vim.log.levels.INFO)
   end
 end, {
   silent = true,
