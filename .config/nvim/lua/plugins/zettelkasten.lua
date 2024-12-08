@@ -515,6 +515,40 @@ return {
             disable_frontmatter = true,
           },
         },
+        {
+          name = "root-dir",
+          path = function()
+            return LazyVim.root()
+          end,
+          strict = true,
+          overrides = {
+            notes_subdir = "docs/notes",
+            daily_notes = {
+              folder = "",
+            },
+            templates = {
+              folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
+              -- substitutions = {},
+            },
+          },
+        },
+        {
+          name = "cwd",
+          path = function()
+            return vim.uv.cwd()
+          end,
+          strict = true,
+          overrides = {
+            notes_subdir = "docs/notes",
+            daily_notes = {
+              folder = "",
+            },
+            templates = {
+              folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
+              -- substitutions = {},
+            },
+          },
+        },
       },
       -- dir = vim.fn.expand("~/Documents/Obsidian Vault"),
       notes_subdir = "notes",
