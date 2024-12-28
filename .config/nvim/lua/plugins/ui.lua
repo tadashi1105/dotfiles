@@ -34,11 +34,4 @@ return {
       opts.timeout = 5000
     end,
   },
-
-  {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    opts = {},
-    keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
-  },
 }
