@@ -69,26 +69,19 @@ return {
   },
 
   {
-    "nvim-telescope/telescope-file-browser.nvim",
-    event = "VeryLazy",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-  },
-
-  {
-    "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-telescope/telescope-file-browser.nvim", "nvim-lua/plenary.nvim" },
+    "ibhagwan/fzf-lua",
     keys = {
       {
         "<leader>fp",
         function()
-          require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+          require("fzf-lua").files({ cwd = require("lazy.core.config").options.root })
         end,
         desc = "Find Plugin File",
       },
       {
         "<leader>fC",
         function()
-          require("telescope.builtin").find_files({ cwd = os.getenv("HOME") .. "/.config" })
+          require("fzf-lua").files({ cwd = os.getenv("HOME") .. "/.config" })
         end,
         desc = "Find Config File (~/.config Dir)",
       },
@@ -99,36 +92,12 @@ return {
             return vim.fn.expand("%:p:h")
           end
 
-          require("telescope").extensions.file_browser.file_browser({
-            path = buffer_dir(),
+          require("fzf-lua").files({
             cwd = buffer_dir(),
-            respect_gitignore = false,
-            hidden = true,
-            grouped = true,
-            previewer = true,
-            initial_mode = "normal",
           })
         end,
         desc = "Find Files with File Browser (Current Buffer Dir)",
       },
     },
-    opts = function(_, opts)
-      opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-      })
-      opts.extensions = vim.tbl_deep_extend("force", opts.extensions or {}, {
-        file_browser = {
-          hijack_netrw = true,
-          initial_mode = "normal",
-        },
-      })
-    end,
-    config = function(_, opts)
-      require("telescope").setup(opts)
-      require("telescope").load_extension("file_browser")
-    end,
   },
 }
