@@ -1384,7 +1384,7 @@ window-colorspace = srgb
 # `window-decoration`), then this will work as expected.
 # 
 # Windows smaller than 10 wide by 4 high are not allowed.
-window-height = 40
+window-height = 38
 
 window-width = 130
 # Whether to enable saving and restoring window state. Window state includes
