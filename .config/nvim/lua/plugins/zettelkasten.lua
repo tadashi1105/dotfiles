@@ -93,15 +93,8 @@ return {
       {
         "<leader>Z<Space>",
         function()
-          local pickers = require("telescope.pickers")
-          local finders = require("telescope.finders")
-          local conf = require("telescope.config").values
-          local actions = require("telescope.actions")
-          local action_state = require("telescope.actions.state")
-          local entry_display = require("telescope.pickers.entry_display")
-          local make_entry = require("telescope.make_entry")
+          local fzf_lua = require("fzf-lua")
 
-          -- List of obsidian.nvim commands
           local obsidian_commands = {
             {
               name = "New Note",
@@ -283,58 +276,28 @@ return {
             },
           }
 
-          local obsidian_picker = function(opts)
-            opts = opts or {}
-
-            local displayer = entry_display.create({
-              separator = "▏",
-              items = {
-                { width = 25 },
-                { width = 25 },
-                { remaining = true },
-              },
-            })
-
-            local make_display = function(entry)
-              return displayer({
-                { entry.name, "TelescopeResultsIdentifier" },
-                { entry.cmd },
-                { entry.desc },
-              })
-            end
-
-            local entry_maker = function(entry)
-              return make_entry.set_default_entry_mt({
-                value = entry,
-                display = make_display,
-                ordinal = entry.name .. " " .. entry.cmd,
-                name = entry.name,
-                cmd = entry.cmd,
-                desc = entry.desc,
-              })
-            end
-
-            pickers
-              .new(opts, {
-                prompt_title = "Obsidian Commands",
-                finder = finders.new_table({
-                  results = obsidian_commands,
-                  entry_maker = entry_maker,
-                }),
-                sorter = conf.generic_sorter(opts),
-                attach_mappings = function(prompt_bufnr, map)
-                  actions.select_default:replace(function()
-                    actions.close(prompt_bufnr)
-                    local selection = action_state.get_selected_entry()
-                    vim.cmd(selection.cmd)
-                  end)
-                  return true
-                end,
-              })
-              :find()
+          local function obsidian_command_palette()
+            fzf_lua.fzf_exec(
+              vim.tbl_map(function(cmd)
+                return cmd.name .. " (" .. cmd.cmd .. "): " .. cmd.desc
+              end, obsidian_commands),
+              {
+                actions = {
+                  ["default"] = function(selected)
+                    local cmd_name = selected[1]:match("^(.+) %(")
+                    for _, cmd in ipairs(obsidian_commands) do
+                      if cmd.name == cmd_name then
+                        vim.cmd(cmd.cmd)
+                        break
+                      end
+                    end
+                  end,
+                },
+              }
+            )
           end
 
-          obsidian_picker()
+          obsidian_command_palette()
         end,
         desc = "Obsidian Command Palette",
       },
