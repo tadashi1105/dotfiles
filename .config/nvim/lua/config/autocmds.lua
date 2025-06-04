@@ -9,19 +9,19 @@ local function augroup(name)
 end
 
 -- Only execute on MacOS
-if vim.fn.has("mac") == 1 then
-  -- Set up autocmd to call the function on InsertLeave event
-  vim.api.nvim_create_autocmd("InsertLeave", {
-    group = augroup("mac"),
-    pattern = "*",
-    callback = function()
-      -- Switch to English input
-      vim.fn.system([[
-        osascript -e 'tell application "System Events" to key code 102'
-      ]])
-      if vim.v.shell_error ~= 0 then
-        vim.api.nvim_err_writeln("Failed to switch input method")
-      end
-    end,
-  })
-end
+-- if vim.fn.has("mac") == 1 then
+--   -- Set up autocmd to call the function on InsertLeave event
+--   vim.api.nvim_create_autocmd("InsertLeave", {
+--     group = augroup("mac"),
+--     pattern = "*",
+--     callback = function()
+--       -- Switch to English input
+--       vim.fn.system([[
+--         osascript -e 'tell application "System Events" to key code 102'
+--       ]])
+--       if vim.v.shell_error ~= 0 then
+--         vim.api.nvim_err_writeln("Failed to switch input method")
+--       end
+--     end,
+--   })
+-- end
