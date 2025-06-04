@@ -330,23 +330,22 @@ return {
             disable_frontmatter = true,
           },
         },
-        {
-          name = "root-dir",
-          path = function()
-            return LazyVim.root()
-          end,
-          strict = true,
-          overrides = {
-            notes_subdir = "docs/notes",
-            daily_notes = {
-              folder = "",
-            },
-            templates = {
-              folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
-              -- substitutions = {},
-            },
-          },
-        },
+        -- {
+        --   name = "root-dir",
+        --   path = function()
+        --     return LazyVim.root()
+        --   end,
+        --   strict = true,
+        --   overrides = {
+        --     notes_subdir = "docs/notes",
+        --     daily_notes = {
+        --       folder = "docs/notes",
+        --     },
+        --     templates = {
+        --       folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
+        --     },
+        --   },
+        -- },
       },
       -- dir = vim.fn.expand("~/Documents/Obsidian Vault"),
       notes_subdir = "00-inbox",
