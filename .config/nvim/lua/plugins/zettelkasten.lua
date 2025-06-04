@@ -311,7 +311,6 @@ return {
       { "<leader>Zf", "<Cmd>ObsidianQuickSwitch<CR>", desc = "Find Notes" },
       { "<leader>Zg", "<Cmd>ObsidianSearch<CR>", desc = "Search Notes (Grep)" },
       { "<leader>Zt", "<Cmd>ObsidianToday<CR>", desc = "Goto Today" },
-      -- { "<leader>ZT", "<Cmd><CR>", desc = "Goto This Week" },
       { "<leader>Zz", "<Cmd>ObsidianFollowLink<CR>", desc = "Follow Link" },
       { "<leader>Zb", "<Cmd>ObsidianBacklinks<CR>", desc = "Show Backlinks" },
       { "<leader>Zi", "<Cmd>ObsidianPasteImg<CR>", desc = "Insert Img Link" },
@@ -358,88 +357,9 @@ return {
           },
         },
         {
-          name = "personal",
-          path = vim.fn.expand("~/Documents/Obsidian Vault/personal"),
-          strict = true,
-          overrides = {
-            notes_subdir = "notes",
-            templates = {
-              folder = "../templates",
-              -- substitutions = {},
-            },
-          },
-        },
-        {
-          name = "work",
-          path = vim.fn.expand("~/Documents/Obsidian Vault/work"),
-          strict = true,
-          overrides = {
-            notes_subdir = "notes",
-            templates = {
-              folder = "../templates",
-              -- substitutions = {},
-            },
-          },
-        },
-        {
-          name = "til",
-          path = vim.fn.expand("~/Documents/Obsidian Vault/til"),
-          strict = true,
-          overrides = {
-            notes_subdir = "notes",
-            templates = {
-              folder = "../templates",
-              -- substitutions = {},
-            },
-          },
-        },
-        {
-          name = "qiita",
-          path = vim.fn.expand("~/Documents/Obsidian Vault/qiita-content"),
-          strict = true,
-          overrides = {
-            notes_subdir = "public",
-            templates = {
-              folder = "../templates",
-              -- substitutions = {},
-            },
-            disable_frontmatter = true,
-          },
-        },
-        {
-          name = "zenn",
-          path = vim.fn.expand("~/Documents/Obsidian Vault/zenn-content"),
-          strict = true,
-          overrides = {
-            notes_subdir = "articles",
-            templates = {
-              folder = "../templates",
-              -- substitutions = {},
-            },
-            disable_frontmatter = true,
-          },
-        },
-        {
           name = "root-dir",
           path = function()
             return LazyVim.root()
-          end,
-          strict = true,
-          overrides = {
-            notes_subdir = "docs/notes",
-            daily_notes = {
-              folder = "",
-            },
-            templates = {
-              folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
-              -- substitutions = {},
-            },
-          },
-        },
-        {
-          name = "cwd",
-          path = function()
-            return vim.uv.cwd()
           end,
           strict = true,
           overrides = {
