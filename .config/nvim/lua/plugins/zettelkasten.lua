@@ -253,7 +253,6 @@ return {
       {
         "<leader>Znf",
         function()
-          local client = require("obsidian").get_client()
           local util = require("obsidian.util")
           local log = require("obsidian.log")
 
@@ -264,8 +263,7 @@ return {
             return
           end
 
-          local notes_subdir = client.opts.notes_subdir
-          local fleeting_dir = notes_subdir and (notes_subdir .. "/fleeting/") or "fleeting/"
+          local fleeting_dir = "02-zettelkasten/fleeting/"
 
           vim.cmd("ObsidianNew " .. fleeting_dir .. title)
         end,
@@ -274,7 +272,6 @@ return {
       {
         "<leader>Znl",
         function()
-          local client = require("obsidian").get_client()
           local util = require("obsidian.util")
           local log = require("obsidian.log")
 
@@ -285,8 +282,7 @@ return {
             return
           end
 
-          local notes_subdir = client.opts.notes_subdir
-          local literature_dir = notes_subdir and (notes_subdir .. "/literature/") or "literature/"
+          local literature_dir = "02-zettelkasten/literature/"
 
           vim.cmd("ObsidianNew " .. literature_dir .. title)
         end,
@@ -295,7 +291,6 @@ return {
       {
         "<leader>Znp",
         function()
-          local client = require("obsidian").get_client()
           local util = require("obsidian.util")
           local log = require("obsidian.log")
 
@@ -306,8 +301,7 @@ return {
             return
           end
 
-          local notes_subdir = client.opts.notes_subdir
-          local permanent_dir = notes_subdir and (notes_subdir .. "/permanent/") or "permanent/"
+          local permanent_dir = "02-zettelkasten/permanent/"
 
           vim.cmd("ObsidianNew " .. permanent_dir .. title)
         end,
@@ -461,9 +455,9 @@ return {
         },
       },
       -- dir = vim.fn.expand("~/Documents/Obsidian Vault"),
-      notes_subdir = "notes",
+      notes_subdir = "00-inbox",
       daily_notes = {
-        folder = "notes/dailies",
+        folder = "01-daily",
         date_format = "%Y-%m-%d",
         alias_format = "%B %-d, %Y",
         default_tags = { "daily-notes" },
