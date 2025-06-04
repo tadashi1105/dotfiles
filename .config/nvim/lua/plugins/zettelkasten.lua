@@ -321,38 +321,12 @@ return {
           name = "default",
           path = vim.fn.expand("~/Documents/Obsidian Vault"),
           strict = true,
-          overrides = {
-            notes_subdir = "inbox/notes",
-            daily_notes = {
-              folder = "inbox/notes/dailies",
-              date_format = "%Y-%m-%d",
-              alias_format = "%B %-d, %Y",
-              default_tags = { "daily-notes" },
-              template = nil,
-            },
-            templates = {
-              folder = "templates",
-              -- substitutions = {},
-            },
-          },
         },
         {
           name = "default (disable frontmatter)",
           path = vim.fn.expand("~/Documents/Obsidian Vault"),
           strict = true,
           overrides = {
-            notes_subdir = "inbox/notes",
-            daily_notes = {
-              folder = "inbox/notes/dailies",
-              date_format = "%Y-%m-%d",
-              alias_format = "%B %-d, %Y",
-              default_tags = { "daily-notes" },
-              template = nil,
-            },
-            templates = {
-              folder = "templates",
-              -- substitutions = {},
-            },
             disable_frontmatter = true,
           },
         },
