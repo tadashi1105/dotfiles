@@ -249,7 +249,18 @@ return {
         desc = "Obsidian Command Palette",
       },
       { "<leader>Zz", "<Cmd>ObsidianFollowLink<CR>", desc = "Follow Link" },
-      { "<leader>Znn", "<Cmd>ObsidianNew<CR>", desc = "New Note" },
+      {
+        "<leader>Znn",
+        function()
+          vim.cmd("ObsidianNew")
+          vim.defer_fn(function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {})
+            vim.cmd("ObsidianTemplate default-template.md")
+          end, 100)
+        end,
+        desc = "New Note",
+      },
       {
         "<leader>Znf",
         function()
@@ -264,8 +275,12 @@ return {
           end
 
           local fleeting_dir = "02-zettelkasten/fleeting/"
-
           vim.cmd("ObsidianNew " .. fleeting_dir .. title)
+          vim.defer_fn(function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {})
+            vim.cmd("ObsidianTemplate fleeting-template.md")
+          end, 100)
         end,
         desc = "New Fleeting Note",
       },
@@ -283,8 +298,12 @@ return {
           end
 
           local literature_dir = "02-zettelkasten/literature/"
-
           vim.cmd("ObsidianNew " .. literature_dir .. title)
+          vim.defer_fn(function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {})
+            vim.cmd("ObsidianTemplate literature-template.md")
+          end, 100)
         end,
         desc = "New Literature Note",
       },
@@ -302,8 +321,12 @@ return {
           end
 
           local permanent_dir = "02-zettelkasten/permanent/"
-
           vim.cmd("ObsidianNew " .. permanent_dir .. title)
+          vim.defer_fn(function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {})
+            vim.cmd("ObsidianTemplate permanent-template.md")
+          end, 100)
         end,
         desc = "New Permanent Note",
       },
@@ -323,11 +346,11 @@ return {
           strict = true,
         },
         {
-          name = "default (disable frontmatter)",
+          name = "default (enable frontmatter)",
           path = vim.fn.expand("~/Documents/Obsidian Vault"),
           strict = true,
           overrides = {
-            disable_frontmatter = true,
+            disable_frontmatter = false,
           },
         },
         -- {
@@ -354,7 +377,7 @@ return {
         date_format = "%Y-%m-%d",
         alias_format = "%B %-d, %Y",
         default_tags = { "daily-notes" },
-        template = nil,
+        template = "daily-template.md",
       },
 
       completion = {
@@ -391,6 +414,10 @@ return {
         return tostring(timestamp) .. "-" .. suffix
       end,
 
+      -- Optional, boolean or a function that takes a filename and returns a boolean.
+      -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
+      disable_frontmatter = true,
+
       ---@return table
       note_frontmatter_func = function(note)
         -- Add the title of the note as an alias.
@@ -400,10 +427,10 @@ return {
 
         local out = {
           id = note.id,
-          aliases = note.aliases,
-          tags = note.tags,
           title = note.title or note:display_name(),
+          aliases = note.aliases,
           created = os.date("%Y-%m-%d %H:%M"),
+          tags = note.tags,
         }
 
         -- `note.metadata` contains any manually added fields in the frontmatter.
