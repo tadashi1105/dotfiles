@@ -375,7 +375,8 @@ return {
       daily_notes = {
         folder = "01-daily",
         date_format = "%Y-%m-%d",
-        alias_format = "%B %-d, %Y",
+        -- alias_format = "%B %-d, %Y",
+        alias_format = "%Y/%m/%d",
         default_tags = { "daily-notes" },
         template = "daily-template.md",
       },
