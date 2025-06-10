@@ -371,9 +371,9 @@ return {
         -- },
       },
       -- dir = vim.fn.expand("~/Documents/Obsidian Vault"),
-      notes_subdir = "00-inbox",
+      notes_subdir = "00_inbox",
       daily_notes = {
-        folder = "01-daily",
+        folder = "01_daily",
         date_format = "%Y-%m-%d",
         -- alias_format = "%B %-d, %Y",
         alias_format = "%Y/%m/%d",
@@ -412,7 +412,7 @@ return {
         -- local date = os.date("%Y-%m-%d")
         -- local timestamp = os.date("%Y%m%d%H%M%S")
         local timestamp = os.time()
-        return tostring(timestamp) .. "-" .. suffix
+        return tostring(timestamp) .. "_" .. suffix
       end,
 
       -- Optional, boolean or a function that takes a filename and returns a boolean.
