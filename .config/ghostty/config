@@ -778,6 +778,7 @@ mouse-scroll-multiplier = 1
 # fullscreen. This is because the background becomes gray and it can cause
 # widgets to show through which isn't generally desirable.
 background-opacity = 0.96
+# background-opacity = 0.5
 
 # A positive value enables blurring of the background when background-opacity
 # is less than 1. The value is the blur radius to apply. A value of 20
