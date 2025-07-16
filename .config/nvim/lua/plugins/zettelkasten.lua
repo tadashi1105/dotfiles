@@ -274,7 +274,7 @@ return {
             return
           end
 
-          local fleeting_dir = "02-zettelkasten/fleeting/"
+          local fleeting_dir = "zettelkasten/fleeting/"
           vim.cmd("ObsidianNew " .. fleeting_dir .. title)
           vim.defer_fn(function()
             local bufnr = vim.api.nvim_get_current_buf()
@@ -297,7 +297,7 @@ return {
             return
           end
 
-          local literature_dir = "02-zettelkasten/literature/"
+          local literature_dir = "zettelkasten/literature/"
           vim.cmd("ObsidianNew " .. literature_dir .. title)
           vim.defer_fn(function()
             local bufnr = vim.api.nvim_get_current_buf()
@@ -320,7 +320,7 @@ return {
             return
           end
 
-          local permanent_dir = "02-zettelkasten/permanent/"
+          local permanent_dir = "zettelkasten/permanent/"
           vim.cmd("ObsidianNew " .. permanent_dir .. title)
           vim.defer_fn(function()
             local bufnr = vim.api.nvim_get_current_buf()
@@ -342,12 +342,12 @@ return {
       workspaces = {
         {
           name = "default",
-          path = vim.fn.expand("~/Documents/Obsidian Vault"),
+          path = vim.fn.expand("~/Documents/obsidian-vault"),
           strict = true,
         },
         {
           name = "default (enable frontmatter)",
-          path = vim.fn.expand("~/Documents/Obsidian Vault"),
+          path = vim.fn.expand("~/Documents/obsidian-vault"),
           strict = true,
           overrides = {
             disable_frontmatter = false,
@@ -365,15 +365,15 @@ return {
         --       folder = "docs/notes",
         --     },
         --     templates = {
-        --       folder = vim.fn.expand("~/Documents/Obsidian Vault/templates"),
+        --       folder = vim.fn.expand("~/Documents/obsidian-vault/templates"),
         --     },
         --   },
         -- },
       },
-      -- dir = vim.fn.expand("~/Documents/Obsidian Vault"),
-      notes_subdir = "00_inbox",
+      -- dir = vim.fn.expand("~/Documents/obsidian-vault"),
+      notes_subdir = "inbox",
       daily_notes = {
-        folder = "01_daily",
+        folder = "daily",
         date_format = "%Y-%m-%d",
         -- alias_format = "%B %-d, %Y",
         alias_format = "%Y/%m/%d",
@@ -470,7 +470,7 @@ return {
 
     -- Specify how to handle attachments.
     attachments = {
-      img_folder = "assets/images",
+      img_folder = "assets",
 
       ---@return string
       img_name_func = function()
