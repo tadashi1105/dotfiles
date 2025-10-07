@@ -1,7 +1,7 @@
 return {
   {
     "b0o/incline.nvim",
-    dependencies = { "echasnovski/mini.icons" },
+    dependencies = { "nvim-mini/mini.icons" },
     event = { "BufReadPre", "BufNewFile" },
     opts = {
       window = {
