@@ -62,3 +62,14 @@ alias g='git'
 alias lg='lazygit'
 alias lgd='lazygit --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 # alias vim='nvim'
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Added by Antigravity
+export PATH="/Users/tadashi/.antigravity/antigravity/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/tadashi/.codeium/windsurf/bin:$PATH"
+
+# Added by Antigravity IDE
+export PATH="/Users/tadashi/.antigravity-ide/antigravity-ide/bin:$PATH"
