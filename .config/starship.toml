@@ -20,11 +20,15 @@
 
 # Streamlined Modern Style
 format = """
-$fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
-$all$line_break\
-$line_break\
+$all$fill[](blue)[ $cmd_duration](fg:black bg:blue)$line_break\
 $character
 """
+# format = """
+# $fill[](blue)[ $cmd_duration$time${custom.time_mood}](fg:black bg:blue)$line_break\
+# $all$line_break\
+# $line_break\
+# $character
+# """
 
 # Inserts a blank line between shell prompts
 add_newline = true
@@ -33,18 +37,21 @@ add_newline = true
 command_timeout = 1000
 
 [cmd_duration]
-format = ' $duration  '
+# format = ' $duration  '
+format = ' $duration '
 
-[fill]
-symbol = '─'
-style = 'blue'
+# [fill]
+# symbol = '─'
+# style = 'blue'
 
 [time]
-disabled = false
+# disabled = false
+disabled = true
 format = ' $time  '
 
 [custom.time_mood]
-disabled = false
+# disabled = false
+disabled = true
 command = '''
 TIME=$(date +%H)
 if [[ "$TIME" -le 17 && "$TIME" -ge 8 ]];then
